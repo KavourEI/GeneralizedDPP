@@ -21,78 +21,75 @@ class _NavBarState extends State<NavbarWidget>{
   @override
   Widget build(BuildContext context) {
     double iconWidth = MediaQuery.of(context).size.width / _icons.length;
-    return SizedBox(
-      height: 100,
-      child: Stack(
-        alignment: Alignment.bottomCenter,
-        children: [
-          CustomPaint(
-            size: Size(double.infinity, 70),
-            painter: NotchedPainter(
-              selectedIndex: _selectedPageIndex,
-              iconCount: _icons.length,
-            ),
+    return Stack(
+      alignment: Alignment.bottomCenter,
+      children: [
+        CustomPaint(
+          size: Size(double.infinity, 70),
+          painter: NotchedPainter(
+            selectedIndex: _selectedPageIndex,
+            iconCount: _icons.length,
           ),
-
-          Positioned(
-            bottom: 0,
-            left: 0,
-            right: 0,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: List.generate(_icons.length, (index) {
-                bool isSelected = index == _selectedPageIndex;
-                return GestureDetector(
-                  onTap: () {
-                    setState(() {
-                      _selectedPageIndex = index;
-                    });
-                    selectedPageNotifier.value = index;
-                  },
-                  child: Container(
-                    width: iconWidth,
-                    height: 70,
+        ),
+    
+        Positioned(
+          bottom: 0,
+          left: 0,
+          right: 0,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: List.generate(_icons.length, (index) {
+              bool isSelected = index == _selectedPageIndex;
+              return GestureDetector(
+                onTap: () {
+                  setState(() {
+                    _selectedPageIndex = index;
+                  });
+                  selectedPageNotifier.value = index;
+                },
+                child: Container(
+                  width: iconWidth,
+                  height: 70,
+                  alignment: Alignment.center,
+                  child: Stack(
                     alignment: Alignment.center,
-                    child: Stack(
-                      alignment: Alignment.center,
-                      children: [
-                        // Rising green circle when selected
-                        AnimatedPositioned(
+                    children: [
+                      // Rising green circle when selected
+                      AnimatedPositioned(
+                        duration: Duration(milliseconds: 200),
+                        curve: Curves.easeOut,
+                        top: isSelected ? -20 : 15,
+                        child: AnimatedContainer(
                           duration: Duration(milliseconds: 300),
-                          curve: Curves.easeOut,
-                          top: isSelected ? -20 : 15,
-                          child: AnimatedContainer(
-                            duration: Duration(milliseconds: 300),
-                            width: isSelected ? 50 : 0,
-                            height: isSelected ? 90 : 0,
-                            decoration: BoxDecoration(
-                              color: Colors.greenAccent,
-                              shape: BoxShape.circle,
-                            ),
-                            alignment: Alignment.center,
-                            child: Icon(
-                              _icons[index],
-                              color: Colors.black,
-                            ),
+                          width: isSelected ? 50 : 0,
+                          height: isSelected ? 90 : 0,
+                          decoration: BoxDecoration(
+                            color: Colors.blueGrey,
+                            shape: BoxShape.circle,
+                          ),
+                          alignment: Alignment.center,
+                          child: Icon(
+                            _icons[index],
+                            color: Colors.black,
                           ),
                         ),
-
-                        // White icon when not selected
-                        if (!isSelected)
-                          Icon(
-                            _icons[index],
-                            color: Colors.white,
-                          ),
-                      ],
-                    ),
+                      ),
+    
+                      // White icon when not selected
+                      if (!isSelected)
+                        Icon(
+                          _icons[index],
+                          color: Colors.white,
+                        ),
+                    ],
                   ),
-                );
-              }),
-            ),
+                ),
+              );
+            }),
           ),
-
-        ],
-      ),
+        ),
+    
+      ],
     );
     
   }
