@@ -8,7 +8,7 @@ import 'package:generalized_dpp/pages/LoggedIn/settings_page.dart';
 
 List<Widget> pages = [
   HomePage(),
-  ItemsPage(),
+  ProductListPage(),
   SettingsPage(),
   ProfilePage(),
 ];

@@ -8,6 +8,7 @@ class ProfilePage extends StatelessWidget {
     return Scaffold(
       backgroundColor: Theme.of(context).colorScheme.surface,
       appBar: AppBar(title: Text('Profile Page')),
+      
     );
   }
 }
