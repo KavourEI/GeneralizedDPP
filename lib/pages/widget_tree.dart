@@ -18,11 +18,14 @@ class WidgetTree extends StatelessWidget{
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: ValueListenableBuilder(valueListenable: selectedPageNotifier, builder: (context, selectedPage, child) {
-        return pages.elementAt(selectedPage);
-      },),
-      bottomNavigationBar: NavbarWidget(),
+    return PopScope(
+      canPop: false,
+      child: Scaffold(
+        body: ValueListenableBuilder(valueListenable: selectedPageNotifier, builder: (context, selectedPage, child) {
+          return pages.elementAt(selectedPage);
+        },),
+        bottomNavigationBar: NavbarWidget(),
+      ),
     );
   }
 }

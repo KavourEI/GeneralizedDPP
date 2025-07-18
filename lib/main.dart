@@ -1,6 +1,6 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:generalized_dpp/pages/widget_tree.dart';
+import 'package:generalized_dpp/pages/LoggedOut/langing_page.dart';
 import 'package:generalized_dpp/theme/theme.dart';
 
 
@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
       theme: lightMode,
       darkTheme: darkMode,
       themeMode: ThemeMode.system,
-      home: WidgetTree()
+      home: LangingPage()
     );
   }
 }

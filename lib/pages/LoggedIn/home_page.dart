@@ -19,7 +19,7 @@ class HomePage extends StatelessWidget {
               child: Container(
                 padding: EdgeInsets.all(15),
                 width: double.infinity,
-                color: Colors.blueGrey,
+                color: Theme.of(context).colorScheme.primaryContainer,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -34,7 +34,12 @@ class HomePage extends StatelessWidget {
                           items: items.map((String items) {
                             return DropdownMenuItem(
                               value: items,
-                              child: Text(items),
+                              child: Text(
+                                items,
+                                style: TextStyle(
+                                  color: Theme.of(context).colorScheme.tertiary,
+                                ),
+                              ),
                             );
                           }).toList(),
                           onChanged: (value) {
@@ -53,12 +58,17 @@ class HomePage extends StatelessWidget {
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: 25,
+                        color: Theme.of(context).colorScheme.tertiary,
                       ),
                     ),
 
                     SizedBox(height: 10),
 
-                    Text('Welcome to your virtual assistant'),
+                    Text(
+                      'Welcome to your virtual assistant',
+                      style: TextStyle(
+                        color: Theme.of(context).colorScheme.tertiary,
+                      ),),
 
                     SizedBox(height: 20),
                   ],
@@ -66,7 +76,7 @@ class HomePage extends StatelessWidget {
               ),
             ),
 
-            SizedBox(height: 20),
+            SizedBox(height: 25),
 
             // Text('Welcome Message'), // TODO: Make a pop-up with don't show again button to explain each page.
             Padding(
@@ -76,13 +86,16 @@ class HomePage extends StatelessWidget {
                 children: [
                   Text(
                     'Your items',
-                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold, 
+                      fontSize: 20,
+                      color: Theme.of(context).colorScheme.tertiary,),
                   ),
                 ],
               ),
             ),
 
-            SizedBox(height: 30),
+            SizedBox(height: 15),
 
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 15),
@@ -95,13 +108,13 @@ class HomePage extends StatelessWidget {
                       borderRadius: BorderRadiusGeometry.circular(25),
                       child: Container(
                         padding: EdgeInsets.all(15),
-                        color: Colors.grey.shade600,
+                        color: Theme.of(context).colorScheme.secondaryContainer,
                         child: Column(
                           children: [
                             Text(
                               'Total Categories',
                               style: TextStyle(
-                                color: Colors.grey.shade400,
+                                color: Theme.of(context).colorScheme.tertiaryFixedDim,
                                 fontWeight: FontWeight.bold,
                                 fontSize: 15,
                               ),
@@ -112,6 +125,7 @@ class HomePage extends StatelessWidget {
                               style: TextStyle(
                                 fontWeight: FontWeight.bold,
                                 fontSize: 35,
+                                color: Theme.of(context).colorScheme.tertiary,
                               ),
                             ),
                           ],
@@ -128,13 +142,13 @@ class HomePage extends StatelessWidget {
                       borderRadius: BorderRadiusGeometry.circular(25),
                       child: Container(
                         padding: EdgeInsets.all(15),
-                        color: Colors.grey.shade600,
+                        color: Theme.of(context).colorScheme.secondaryContainer,
                         child: Column(
                           children: [
                             Text(
                               'Total Items',
                               style: TextStyle(
-                                color: Colors.grey.shade400,
+                                color: Theme.of(context).colorScheme.tertiaryFixedDim,
                                 fontWeight: FontWeight.bold,
                                 fontSize: 15,
                               ),
@@ -145,6 +159,7 @@ class HomePage extends StatelessWidget {
                               style: TextStyle(
                                 fontWeight: FontWeight.bold,
                                 fontSize: 35,
+                                color: Theme.of(context).colorScheme.tertiary,
                               ),
                             ),
                           ],
@@ -156,7 +171,7 @@ class HomePage extends StatelessWidget {
               ),
             ),
 
-            SizedBox(height: 20),
+            SizedBox(height: 25),
 
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 25.0),
@@ -165,16 +180,19 @@ class HomePage extends StatelessWidget {
                 children: [
                   Text(
                     "Last Month's Activity",
-                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold, 
+                      fontSize: 20,
+                      color: Theme.of(context).colorScheme.tertiary,),
                   ),
                 ],
               ),
             ),
 
-            SizedBox(height: 20,),
+            SizedBox(height: 15,),
 
             Padding(
-              padding: EdgeInsets.all(15),
+              padding: const EdgeInsets.symmetric(horizontal: 15),
               child: Row(
                 children: [
                   // Last month Activity (Item Changes)
@@ -183,13 +201,13 @@ class HomePage extends StatelessWidget {
                       borderRadius: BorderRadiusGeometry.circular(25),
                       child: Container(
                         padding: EdgeInsets.all(15),
-                        color: Colors.grey.shade600,
+                        color: Theme.of(context).colorScheme.secondaryContainer,
                         child: Column(
                           children: [
                             Text(
                               'Items changed',
                               style: TextStyle(
-                                color: Colors.grey.shade400,
+                                color: Theme.of(context).colorScheme.tertiaryFixedDim,
                                 fontWeight: FontWeight.bold,
                                 fontSize: 15,
                               ),
@@ -200,6 +218,7 @@ class HomePage extends StatelessWidget {
                               style: TextStyle(
                                 fontWeight: FontWeight.bold,
                                 fontSize: 35,
+                                color: Theme.of(context).colorScheme.tertiary,
                               ),
                             ),
                           ],
@@ -216,13 +235,13 @@ class HomePage extends StatelessWidget {
                       borderRadius: BorderRadiusGeometry.circular(25),
                       child: Container(
                         padding: EdgeInsets.all(15),
-                        color: Colors.grey.shade600,
+                        color: Theme.of(context).colorScheme.secondaryContainer,
                         child: Column(
                           children: [
                             Text(
                               'Users Logged',
                               style: TextStyle(
-                                color: Colors.grey.shade400,
+                                color: Theme.of(context).colorScheme.tertiaryFixedDim,
                                 fontWeight: FontWeight.bold,
                                 fontSize: 15,
                               ),
@@ -233,6 +252,7 @@ class HomePage extends StatelessWidget {
                               style: TextStyle(
                                 fontWeight: FontWeight.bold,
                                 fontSize: 35,
+                                color: Theme.of(context).colorScheme.tertiary,
                               ),
                             ),
                           ],
@@ -244,7 +264,7 @@ class HomePage extends StatelessWidget {
               ),
             ),
 
-             SizedBox(height: 20),
+             SizedBox(height: 25),
 
             // Text('Welcome Message'), // TODO: Make a pop-up with don't show again button to explain each page.
             Padding(
@@ -254,21 +274,25 @@ class HomePage extends StatelessWidget {
                 children: [
                   Text(
                     'Most Viewd Items',
-                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold, 
+                      fontSize: 20,
+                      color: Theme.of(context).colorScheme.tertiary,
+                    ),
                   ),
                 ],
               ),
             ),
 
-            SizedBox(height: 30),
+            SizedBox(height: 15),
 
             Padding(
-              padding: const EdgeInsets.all(15),
+              padding: const EdgeInsets.symmetric(horizontal: 15),
               child: ClipRRect(
                 borderRadius: BorderRadiusGeometry.circular(25),
                 child: Container(
                   padding: EdgeInsets.all(15),
-                  color: Colors.grey.shade600,
+                  color: Theme.of(context).colorScheme.secondaryContainer,
                   child: Column(
                     children: [
   
@@ -276,16 +300,19 @@ class HomePage extends StatelessWidget {
                         defaultVerticalAlignment:
                             TableCellVerticalAlignment.middle,
                         children: [
-                          MyTableRowHeader.build('Item Name', 'Interactions'),
-                          MyTableRow.build('Name 1', '70'),
-                          MyTableRow.build('Name 2', '67'),
-                          MyTableRow.build('Name 3', '53'),
-                          MyTableRow.build('Name 4', '42'),
-                          MyTableRow.build('Name 5', '28'),
-                          MyTableRow.build('Name 6', '28'),
-                          MyTableRow.build('Name 7', '16'),
-                          MyTableRow.build('Name 8', '10'),
-                          MyTableRow.build('Name 9', '8'),
+                          MyTableRowHeader.build(context, 'Item Name', 'Interactions',),
+                          MyTableRow.build(context, 'Product Name 1', '70'),
+                          MyTableRow.build(context, 'Product Name 2', '67'),
+                          MyTableRow.build(context, 'Product Name 3', '53'),
+                          MyTableRow.build(context, 'Product Name 4', '42'),
+                          MyTableRow.build(context, 'Product Name 5', '28'),
+                          MyTableRow.build(context, 'Product Name 6', '28'),
+                          MyTableRow.build(context, 'Product Name 7', '16'),
+                          MyTableRow.build(context, 'Product Name 8', '10'),
+                          MyTableRow.build(context, 'Product Name 9', '8'),
+                          MyTableRow.build(context, 'Product Name 10', '5'),
+                          MyTableRow.build(context, 'Product Name 11', '5'),
+                          MyTableRow.build(context, 'Product Name 12', '2'),
                         ],
                       ),
                     ],
@@ -320,11 +347,19 @@ class HomePage extends StatelessWidget {
 class MyTableRow {
   MyTableRow({required String name, required String visits});
 
-  static TableRow build(String name, String visits) {
+  static TableRow build(BuildContext context, String name, String visits) {
     return TableRow(
       children: [
-        Center(child: Text(name)),
-        Center(child: Text(visits)),
+        Center(child: Text(
+          name,
+          style: TextStyle(
+            color: Theme.of(context).colorScheme.tertiary,
+          ),)),
+        Center(child: Text(
+          visits, 
+          style: TextStyle(
+            color: Theme.of(context).colorScheme.tertiary,
+          ),)),
       ],
     );
   }
@@ -333,11 +368,29 @@ class MyTableRow {
 class MyTableRowHeader {
   MyTableRowHeader({required String name, required String visits});
 
-  static TableRow build(String name, String visits) {
+  static TableRow build(BuildContext context, String name, String visits) {
     return TableRow(
       children: [
-        Center(child: Text(name,style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),)),
-        Center(child: Text(visits,style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),)),
+        Center(
+          child: Text(
+            name,
+            style: TextStyle(
+              fontWeight: FontWeight.bold,
+              fontSize: 18,
+              color: Theme.of(context).colorScheme.tertiary,
+            ),
+          ),
+        ),
+        Center(
+          child: Text(
+            visits,
+            style: TextStyle(
+              fontWeight: FontWeight.bold, 
+              fontSize: 18,
+              color: Theme.of(context).colorScheme.tertiary,
+              ),
+          ),
+        ),
       ],
     );
   }

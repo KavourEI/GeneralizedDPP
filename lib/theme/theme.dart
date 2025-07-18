@@ -3,11 +3,17 @@ import 'package:flutter/material.dart';
 ThemeData lightMode = ThemeData(
   brightness: Brightness.light,
   colorScheme: ColorScheme.light(
-    surface: Colors.white,
+    surface: Color(0xFFDDE6ED),  // Backgound color
     primary: Colors.black,
     secondary: Colors.deepOrange.shade100,
-    shadow: Colors.black
+    shadow: Colors.black,
+    primaryContainer: Color(0xFF9DB2BF),  // for containers like KPI
+    secondaryContainer: Color(0xFF9DB2BF),  // for containers like KPI
+    tertiary: Color(0xFF26374D), // for text
+    tertiaryFixedDim: Color.fromRGBO(82, 109, 130, 0.8), // for text light like Kpi titles
   ),
+  
+  
   
   elevatedButtonTheme: ElevatedButtonThemeData(
     style: ElevatedButton.styleFrom(
@@ -27,10 +33,19 @@ ThemeData lightMode = ThemeData(
 ThemeData darkMode = ThemeData(
   brightness: Brightness.dark,
   colorScheme: ColorScheme.dark(
-    surface: Colors.grey.shade900,
-    primary: Colors.white,
-    secondary: Colors.white,
-    shadow: Colors.white,
+    surface: Color(0xFF0A1931),  // Backgound color
+    primary: Colors.black,
+    secondary: Colors.deepOrange.shade100,
+    shadow: Colors.black,
+    primaryContainer: Color(0xFF1A3D63),  // for containers like KPI
+    secondaryContainer: Color(0xFF1A3D63),  // for containers like KPI
+    tertiary: Color(0xFFB3CFE5), // for text
+    tertiaryFixedDim: Color.fromRGBO(167, 201, 223, 0.8), // for text light like Kpi titles
+
+    // surface: Color(0xFF26425A),
+    // primary: Colors.white,
+    // secondary: Colors.white,
+    // shadow: Colors.white,
   ),
 
   elevatedButtonTheme: ElevatedButtonThemeData(

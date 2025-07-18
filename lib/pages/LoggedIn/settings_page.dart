@@ -9,7 +9,9 @@ class SettingsPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Theme.of(context).colorScheme.surface,
-      appBar: AppBar(title: Text('Settings Page')),
+      appBar: AppBar(
+        title: Text('Settings Page'),
+        automaticallyImplyLeading: false,),
 
       body: Column(
         children: [
