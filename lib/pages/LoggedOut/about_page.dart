@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:generalized_dpp/pages/LoggedOut/langing_page.dart';
-import 'package:generalized_dpp/pages/LoggedOut/sign_page.dart';
+import 'package:generalized_dpp/pages/LoggedOut/singin_page.dart';
 
 class AboutPage extends StatelessWidget{
   const AboutPage({super.key});
@@ -22,7 +22,7 @@ class AboutPage extends StatelessWidget{
                 TextButton(child: Text('Home'),onPressed: () {
                   Navigator.push(
                     context,
-                    CupertinoPageRoute(builder: (context) => const LangingPage())
+                    CupertinoPageRoute(builder: (context) => const LandingPage())
                   );
                 },),
                 TextButton(child: Text('About Us'),onPressed: () {

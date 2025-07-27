@@ -1,0 +1,21 @@
+profile_code,system_series,profile_type,material_alloy,thermal_break,u_value,max_glazing_thickness,finishing_options,recycled_content_pct,certifications
+ALM-5447,SMARTIA S440,Fixed Panel,EN AW 6060,False,1.62,44.0,['Wood Effect'],30,['Cradle to Cradle Silver']
+ALM-9814,SMARTIA M9800,Casement,EN AW 6060,True,1.24,44.0,"['Anodized', 'Wood Effect']",60,"['CE Marked', 'Synesgy ESG']"
+ALM-3751,SMARTIA S350,Curtain Wall,EN AW 6063 T6,False,1.71,50.0,"['Powder Coated', 'Anodized', 'Wood Effect']",80,['Cradle to Cradle Silver']
+ALM-8644,SMARTIA S350,Pivot Door,EN AW 6005A,False,1.63,40.0,['Powder Coated'],40,['IFT Rosenheim Certified']
+ALM-2229,SMARTIA S350,Pivot Door,EN AW 6005A,False,1.36,50.0,"['Powder Coated', 'Anodized', 'Wood Effect']",50,"['CE Marked', 'Synesgy ESG']"
+ALM-7414,SMARTIA S350,Casement,EN AW 6063 T6,True,1.28,24.0,"['Powder Coated', 'Anodized']",40,"['CE Marked', 'Synesgy ESG']"
+ALM-3066,SMARTIA M11000,Fixed Panel,EN AW 6005A,False,1.07,50.0,"['Anodized', 'Wood Effect']",60,[]
+ALM-1236,SUPREME S77,Sliding Frame,EN AW 6063 T6,True,1.86,50.0,"['Powder Coated', 'Anodized']",60,[]
+ALM-9280,SUPREME SD95,Casement,EN AW 6063 T6,True,1.79,44.0,"['Powder Coated', 'Anodized']",40,['IFT Rosenheim Certified']
+ALM-8258,SUPREME S500 PHOS,Pivot Door,EN AW 6005A,False,2.1,44.0,"['Powder Coated', 'Anodized']",80,"['Cradle to Cradle Silver', 'IFT Rosenheim Certified']"
+ALM-8814,SMARTIA S350,Casement,EN AW 6063 T6,True,1.23,32.0,"['Powder Coated', 'Anodized']",50,['Cradle to Cradle Silver']
+ALM-4566,SMARTIA S350,Curtain Wall,EN AW 6005A,True,1.85,24.0,['Wood Effect'],50,"['Cradle to Cradle Silver', 'IFT Rosenheim Certified']"
+ALM-1576,SMARTIA M9800,Curtain Wall,EN AW 6060,True,1.25,40.0,"['Anodized', 'Wood Effect']",80,['Cradle to Cradle Silver']
+ALM-2921,SUPREME SD95,Fixed Panel,EN AW 6060,False,1.78,32.0,['Wood Effect'],60,"['Cradle to Cradle Silver', 'IFT Rosenheim Certified']"
+ALM-1150,SUPREME S77,Sliding Frame,EN AW 6060,False,1.55,24.0,['Wood Effect'],30,['IFT Rosenheim Certified']
+ALM-3095,SUPREME SD95,Curtain Wall,EN AW 6060,True,1.6,40.0,['Wood Effect'],80,"['CE Marked', 'Synesgy ESG']"
+ALM-7465,SUPREME SD95,Fixed Panel,EN AW 6005A,False,1.69,24.0,"['Powder Coated', 'Anodized']",40,['Cradle to Cradle Silver']
+ALM-2900,SMARTIA M9800,Sliding Frame,EN AW 6005A,True,1.19,40.0,"['Powder Coated', 'Anodized', 'Wood Effect']",40,"['Cradle to Cradle Silver', 'IFT Rosenheim Certified']"
+ALM-4134,SMARTIA M5600,Fixed Panel,EN AW 6060,True,1.0,44.0,['Wood Effect'],50,['Cradle to Cradle Silver']
+ALM-8584,SUPREME S500 PHOS,Fixed Panel,EN AW 6005A,False,1.69,50.0,"['Powder Coated', 'Anodized', 'Wood Effect']",30,['IFT Rosenheim Certified']

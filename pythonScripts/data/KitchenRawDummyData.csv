@@ -1,0 +1,21 @@
+ID,Material Name,Material Type,Source,Common Use in Kitchen,Sustainability Rating (1–5),Finish Type,Durability (1–5),Cost Level,Weight (kg/m²),Fire Resistance
+1,MDF,Engineered Wood,Wood fibers,"Cabinets, Shelving",3,Paint/Laminate,3,Low,38,No
+2,Plywood,Engineered Wood,Wood veneers,"Cabinet boxes, Drawer bottoms",4,Veneer/Laminate,4,Medium,25,Yes
+3,Solid Oak,Natural Wood,Oak Trees,"Cabinet frames, Countertops",3,Oil/Wax,5,High,55,No
+4,Stainless Steel,Metal,Iron & Carbon,"Sinks, Appliances",4,Brushed/Polished,5,High,80,Yes
+5,Quartz Composite,Engineered Stone,Quartz + Resin,Countertops,4,Polished,5,High,100,Yes
+6,Granite,Natural Stone,Quarries,Countertops,2,Polished,5,High,110,No
+7,Melamine,Coating/Plastic,Synthetic,"Cabinet Surfaces, Shelves",2,Gloss/Matt,3,Low,10,No
+8,HDF,Engineered Wood,Wood fibers,"Drawer bottoms, Panels",3,Laminate,4,Low,45,No
+9,Acrylic,Plastic Polymer,Petrochemical,"Cabinet doors, Panels",2,High Gloss,3,Medium,18,No
+10,Laminate,Decorative Surface,Paper + Resin,"Countertops, Cabinet fronts",3,High Pressure Lam.,4,Low,14,Yes
+11,Bamboo,Natural Material,Bamboo Grass,"Countertops, Cabinets",5,Natural/Varnished,4,Medium,32,No
+12,Particle Board,Engineered Wood,Wood chips,"Cabinets, Panels",2,Laminate,2,Low,35,No
+13,Ceramic Tiles,Inorganic Material,Clay,"Backsplash, Flooring",4,Glazed,5,Medium,20,Yes
+14,Tempered Glass,Glass,Silica,"Cabinet doors, Shelving",4,Clear/Frosted,4,High,35,Yes
+15,PVC Edgebanding,Plastic,Synthetic,Finishing Cabinet Edges,2,Gloss/Matt,2,Low,5,No
+16,Recycled Aluminum,Metal,Scrap Aluminum,"Handles, Decorative Features",5,Anodized,5,Medium,40,Yes
+17,Cork,Natural Material,Cork Oak Trees,"Flooring, Wall Panels",5,Natural/Varnished,3,Medium,12,No
+18,Marble,Natural Stone,Quarries,"Countertops, Backsplashes",2,Polished,5,High,115,No
+19,Recycled Plastic Board,Composite Material,Recycled Plastics,"Cabinet interiors, Panels",5,Smooth/Matte,3,Low,22,Yes
+20,Thermofoil,Vinyl Coating,Synthetic,Cabinet Door Finish,2,PVC Overlay,3,Low,9,No

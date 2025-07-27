@@ -1,10 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:generalized_dpp/pages/LoggedOut/about_page.dart';
-import 'package:generalized_dpp/pages/LoggedOut/sign_page.dart';
+import 'package:generalized_dpp/pages/LoggedOut/singin_page.dart';
 
-class LangingPage extends StatelessWidget{
-  const LangingPage({super.key});
+class LandingPage extends StatelessWidget{
+  const LandingPage({super.key});
 
   @override
   Widget build(BuildContext context) {
