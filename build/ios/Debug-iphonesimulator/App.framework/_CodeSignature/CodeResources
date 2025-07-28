@@ -10,11 +10,11 @@
 		</data>
 		<key>flutter_assets/AssetManifest.bin</key>
 		<data>
-		Wjfamanbwd98kH/xDmK9Ybhw3PI=
+		XuJV1KuAYwWazayDhH5PCRowECM=
 		</data>
 		<key>flutter_assets/AssetManifest.json</key>
 		<data>
-		iXqy//uA41YVM5YK7u2I0uYzbEs=
+		HIdSe79ZrYwPuDxXn1eFYAu+RMY=
 		</data>
 		<key>flutter_assets/FontManifest.json</key>
 		<data>
@@ -40,9 +40,17 @@
 		<data>
 		23s9KP6DBLsgxvnX8TxPFkrrrh4=
 		</data>
+		<key>flutter_assets/assets/lottieFiles/Settings1.json</key>
+		<data>
+		IlCcQ6zF7gLrCdqCWm4DjwJCrqs=
+		</data>
 		<key>flutter_assets/assets/lottieFiles/account_created.json</key>
 		<data>
 		h2TAoddumSS1oY/YELjJw7dAfDs=
+		</data>
+		<key>flutter_assets/assets/lottieFiles/settings2.json</key>
+		<data>
+		wYSADI56Ci9XsLFv7amrAnWsL0g=
 		</data>
 		<key>flutter_assets/assets/lottieFiles/user_shielda_aimation.json</key>
 		<data>
@@ -58,7 +66,7 @@
 		</data>
 		<key>flutter_assets/kernel_blob.bin</key>
 		<data>
-		Nbv2bL3crl4QxuxG91+8kqICGBE=
+		X03whX4FJOk4Li8ZLyx43a494Bo=
 		</data>
 		<key>flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf</key>
 		<data>
@@ -79,14 +87,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			zAhdCA0C/ucYzHUTArKQ/wuXZNSwqjSRxWuYuXxzLDM=
+			OsGerO1fiak8wxkJSo1/O2EQb88obaKX4tZ+goygM5U=
 			</data>
 		</dict>
 		<key>flutter_assets/AssetManifest.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			P4nbZgvpb2QI5vJ3EBzwWlzluKVkqLoVtltuQNewuaM=
+			swNk0k7h0RhSA7vnOopauC9+ht6Ayfdtx+KE3HlXXIE=
 			</data>
 		</dict>
 		<key>flutter_assets/FontManifest.json</key>
@@ -131,11 +139,25 @@
 			9u+0i+2SI4WyXWPp4zAmlJv2cvAOjgHWr+P+nviEU/M=
 			</data>
 		</dict>
+		<key>flutter_assets/assets/lottieFiles/Settings1.json</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			D/+YXlawFmRa7o0HsX7BaJ4RJOd7VY4GgJNrGu73BIQ=
+			</data>
+		</dict>
 		<key>flutter_assets/assets/lottieFiles/account_created.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
 			G3aGualFXGP1mbAL+JXyUAzdX2NiPEZpj28jSUp8zFA=
+			</data>
+		</dict>
+		<key>flutter_assets/assets/lottieFiles/settings2.json</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			8yMjRojJdoe4f4q8b3NhhQu773ZpQmVGJxyKaWQ2JQ4=
 			</data>
 		</dict>
 		<key>flutter_assets/assets/lottieFiles/user_shielda_aimation.json</key>
@@ -163,7 +185,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			TlNhJXettJO/2q5O/GYWr7Tp8Upo90Qd8PibsqM3Hqw=
+			5JCD8yX9YhWxrxorCYVYgNRowZgnzvPRPGQ3MZNozXg=
 			</data>
 		</dict>
 		<key>flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf</key>

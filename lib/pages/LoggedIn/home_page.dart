@@ -1,9 +1,9 @@
 import 'dart:ui';
-
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:generalized_dpp/pages/NotUsed/items_page_graphDB.dart';
+import 'package:generalized_dpp/pages/LoggedOut/langing_page.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -147,7 +147,18 @@ class _HomePageState extends State<HomePage> {
                             print(value);
                           },
                         ),
+                        Spacer(flex: 1,),
                         Icon(Icons.notifications_none_outlined),
+                        SizedBox(width: 20,),
+                        IconButton(
+                          onPressed: () {
+                            FirebaseAuth.instance.signOut();
+                            Navigator.pushReplacement(
+                              context,
+                              CupertinoPageRoute(builder: (_) => LandingPage()));
+                          }, 
+                          icon: Icon(Icons.logout_sharp))
+                        
                       ],
                     ),
 
