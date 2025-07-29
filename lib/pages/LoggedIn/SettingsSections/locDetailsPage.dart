@@ -10,7 +10,8 @@ class LocalizationDetailsSection extends StatefulWidget {
 
 class _localDetailsState extends State<LocalizationDetailsSection> {
   String? _selectedLanguage = 'English';
-  String? _selectedTimeZone = 'UTC+2 (Athens)'; // TODO: Set the default value to be the selected one when the user started using the app
+  String? _selectedTimeZone =
+      'UTC+2 (Athens)'; // TODO: Set the default value to be the selected one when the user started using the app
 
   @override
   Widget build(BuildContext context) {
@@ -22,49 +23,58 @@ class _localDetailsState extends State<LocalizationDetailsSection> {
           children: [
             Center(
               child: const Text(
-                'Localization & Language Settings', 
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)
+                'Localization & Language Settings',
+                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
               ),
             ),
             const SizedBox(height: 20),
 
-            _buildSectionDevider("General Settings"),
-            
-            _buildSettingItem('Interface Language'),
-            _myTextField('English'),
+            ClipRRect(
+              borderRadius: BorderRadiusGeometry.circular(25),
+              child: Container(
+                padding: EdgeInsets.all(35),
+                width: double.infinity,
+                color: Theme.of(context).colorScheme.primaryContainer,
+                child: Column(
+                  children: [
+                    _buildSectionDevider("General Settings"),
 
-            const SizedBox(height: 10),
-            _buildSettingItem('Time Zone'),
-            _myTextField('GMT +3'),
+                    _buildSettingItem('Interface Language'),
+                    _myTextField('English'),
 
-            const SizedBox(height: 10),
-            _buildSettingItem('Currency Format'),
-            _myTextField('Euro €'),
+                    const SizedBox(height: 10),
+                    _buildSettingItem('Time Zone'),
+                    _myTextField('GMT +3'),
 
-            const SizedBox(height: 10),
-            _buildSettingItem('Date Format'),
-            _myTextField('Month / Day / Year'),
+                    const SizedBox(height: 10),
+                    _buildSettingItem('Currency Format'),
+                    _myTextField('Euro €'),
 
+                    const SizedBox(height: 10),
+                    _buildSettingItem('Date Format'),
+                    _myTextField('Month / Day / Year'),
+                  ],
+                ),
+              ),
+            ),
           ],
         ),
       ),
     );
   }
 
-  Widget _buildSectionDevider(String text){
+  Widget _buildSectionDevider(String text) {
     return Row(
       children: [
-        Expanded(child: Divider(thickness: 1,)),
+        Expanded(child: Divider(thickness: 1)),
         Padding(
-          padding: const EdgeInsets.symmetric( horizontal: 20),
+          padding: const EdgeInsets.symmetric(horizontal: 20),
           child: Text(
             text,
-            style: TextStyle(
-              fontWeight: FontWeight.bold,
-              fontSize: 18
-            ),),
+            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
+          ),
         ),
-        Expanded(child: Divider(thickness: 1,)),
+        Expanded(child: Divider(thickness: 1)),
       ],
     );
   }
@@ -72,10 +82,7 @@ class _localDetailsState extends State<LocalizationDetailsSection> {
   Widget _buildSettingItem(String text) {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 8),
-      child: Text(
-        text, 
-        style: const TextStyle(fontSize: 16)
-      ),
+      child: Text(text, style: const TextStyle(fontSize: 16)),
     );
   }
 
@@ -109,15 +116,9 @@ class _localDetailsState extends State<LocalizationDetailsSection> {
     return DropdownButton<String>(
       value: _selectedLanguage,
       items: const [
-        DropdownMenuItem(
-          value: 'English',
-          child: Text('English'),
-        ),
-        DropdownMenuItem(
-          value: 'Greek',
-          child: Text('Greek'),
-        ),
-      ], 
+        DropdownMenuItem(value: 'English', child: Text('English')),
+        DropdownMenuItem(value: 'Greek', child: Text('Greek')),
+      ],
       onChanged: (value) {
         setState(() {
           _selectedLanguage = value;
@@ -142,11 +143,8 @@ class _localDetailsState extends State<LocalizationDetailsSection> {
           value: 'UTC+1 (London)',
           child: Text('UTC+1 (London)'),
         ),
-        DropdownMenuItem(
-          value: 'UTC (Lisbon)',
-          child: Text('UTC (Lisbon)'),
-        ),
-      ], 
+        DropdownMenuItem(value: 'UTC (Lisbon)', child: Text('UTC (Lisbon)')),
+      ],
       onChanged: (value) {
         setState(() {
           _selectedTimeZone = value;
@@ -159,6 +157,8 @@ class _localDetailsState extends State<LocalizationDetailsSection> {
   }
 
   void _downloadBillingHistory() {
-    print('Downloading billing history...');  // TODO: Create a page to see all the available history billing information and be downloadable to a pdf
+    print(
+      'Downloading billing history...',
+    ); // TODO: Create a page to see all the available history billing information and be downloadable to a pdf
   }
 }

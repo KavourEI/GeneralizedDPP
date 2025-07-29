@@ -10,7 +10,8 @@ class OrganizationDetailsSection extends StatefulWidget {
 
 class _OrganizationSetState extends State<OrganizationDetailsSection> {
   String? _selectedLanguage = 'English';
-  String? _selectedTimeZone = 'UTC+2 (Athens)'; // TODO: Set the default value to be the selected one when the user started using the app
+  String? _selectedTimeZone =
+      'UTC+2 (Athens)'; // TODO: Set the default value to be the selected one when the user started using the app
 
   @override
   Widget build(BuildContext context) {
@@ -22,60 +23,69 @@ class _OrganizationSetState extends State<OrganizationDetailsSection> {
           children: [
             Center(
               child: const Text(
-                'Organization/Company Settings', 
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)
+                'Organization/Company Settings',
+                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
               ),
             ),
             const SizedBox(height: 20),
 
-            _buildSectionDevider("Organization Details"),
-            
-            _buildSettingItem('Organization Name'),
-            _myTextField('John'),
+            ClipRRect(
+              borderRadius: BorderRadiusGeometry.circular(25),
+              child: Container(
+                padding: EdgeInsets.all(35),
+                width: double.infinity,
+                color: Theme.of(context).colorScheme.primaryContainer,
+                child: Column(
+                  children: [
+                    _buildSectionDevider("Organization Details"),
 
-            const SizedBox(height: 10),
-            _buildSettingItem('Company Registration Number / VAT'),
-            _myTextField('Doe'),
+                    _buildSettingItem('Organization Name'),
+                    _myTextField('John'),
 
-            const SizedBox(height: 10),
-            _buildSettingItem('Address'),
-            _myTextField('TheKrab'),
+                    const SizedBox(height: 10),
+                    _buildSettingItem('Company Registration Number / VAT'),
+                    _myTextField('Doe'),
 
-            const SizedBox(height: 10),
-            _buildSettingItem('Country'),
-            _myTextField('themis.kavour@icloud.com'),
+                    const SizedBox(height: 10),
+                    _buildSettingItem('Address'),
+                    _myTextField('TheKrab'),
 
-            const SizedBox(height: 10),
-            _buildSettingItem('Digital Product Passports Owned'),
-            _myTextField('0123456789'),
+                    const SizedBox(height: 10),
+                    _buildSettingItem('Country'),
+                    _myTextField('themis.kavour@icloud.com'),
 
-            const SizedBox(height: 10),
-            _buildSettingItem('User Role'),
-            _myTextField('Admin, Editor, Viewer'),
+                    const SizedBox(height: 10),
+                    _buildSettingItem('Digital Product Passports Owned'),
+                    _myTextField('0123456789'),
 
-            const SizedBox(height: 10),
-            _buildSettingItem('Company Logo here'),
+                    const SizedBox(height: 10),
+                    _buildSettingItem('User Role'),
+                    _myTextField('Admin, Editor, Viewer'),
 
+                    const SizedBox(height: 10),
+                    _buildSettingItem('Company Logo here'),
+                  ],
+                ),
+              ),
+            ),
           ],
         ),
       ),
     );
   }
 
-  Widget _buildSectionDevider(String text){
+  Widget _buildSectionDevider(String text) {
     return Row(
       children: [
-        Expanded(child: Divider(thickness: 1,)),
+        Expanded(child: Divider(thickness: 1)),
         Padding(
-          padding: const EdgeInsets.symmetric( horizontal: 20),
+          padding: const EdgeInsets.symmetric(horizontal: 20),
           child: Text(
             text,
-            style: TextStyle(
-              fontWeight: FontWeight.bold,
-              fontSize: 18
-            ),),
+            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
+          ),
         ),
-        Expanded(child: Divider(thickness: 1,)),
+        Expanded(child: Divider(thickness: 1)),
       ],
     );
   }
@@ -83,10 +93,7 @@ class _OrganizationSetState extends State<OrganizationDetailsSection> {
   Widget _buildSettingItem(String text) {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 8),
-      child: Text(
-        text, 
-        style: const TextStyle(fontSize: 16)
-      ),
+      child: Text(text, style: const TextStyle(fontSize: 16)),
     );
   }
 
@@ -120,15 +127,9 @@ class _OrganizationSetState extends State<OrganizationDetailsSection> {
     return DropdownButton<String>(
       value: _selectedLanguage,
       items: const [
-        DropdownMenuItem(
-          value: 'English',
-          child: Text('English'),
-        ),
-        DropdownMenuItem(
-          value: 'Greek',
-          child: Text('Greek'),
-        ),
-      ], 
+        DropdownMenuItem(value: 'English', child: Text('English')),
+        DropdownMenuItem(value: 'Greek', child: Text('Greek')),
+      ],
       onChanged: (value) {
         setState(() {
           _selectedLanguage = value;
@@ -153,11 +154,8 @@ class _OrganizationSetState extends State<OrganizationDetailsSection> {
           value: 'UTC+1 (London)',
           child: Text('UTC+1 (London)'),
         ),
-        DropdownMenuItem(
-          value: 'UTC (Lisbon)',
-          child: Text('UTC (Lisbon)'),
-        ),
-      ], 
+        DropdownMenuItem(value: 'UTC (Lisbon)', child: Text('UTC (Lisbon)')),
+      ],
       onChanged: (value) {
         setState(() {
           _selectedTimeZone = value;
@@ -170,6 +168,8 @@ class _OrganizationSetState extends State<OrganizationDetailsSection> {
   }
 
   void _downloadBillingHistory() {
-    print('Downloading billing history...');  // TODO: Create a page to see all the available history billing information and be downloadable to a pdf
+    print(
+      'Downloading billing history...',
+    ); // TODO: Create a page to see all the available history billing information and be downloadable to a pdf
   }
 }

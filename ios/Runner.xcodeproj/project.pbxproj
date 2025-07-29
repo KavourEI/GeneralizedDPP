@@ -125,12 +125,12 @@
 			isa = PBXGroup;
 			children = (
 				9740EEB11CF90186004384FC /* Flutter */,
-				97C146F01CF9000F007C117D /* Runner */,
 				97C146EF1CF9000F007C117D /* Products */,
 				331C8082294A63A400263BE5 /* RunnerTests */,
 				0B53A621A982E99D9EA02BA5 /* GoogleService-Info.plist */,
 				16A9AF162A7AF2F8C391D36C /* Pods */,
 				BFB3BB4FAD8B49CC71F2738A /* Frameworks */,
+				97C146F01CF9000F007C117D /* Runner */,
 			);
 			sourceTree = "<group>";
 		};

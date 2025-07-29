@@ -9,6 +9,7 @@ import 'package:generalized_dpp/pages/LoggedOut/about_page.dart';
 import 'package:generalized_dpp/pages/LoggedOut/langing_page.dart';
 import 'package:generalized_dpp/pages/LoggedOut/register.dart';
 import 'package:generalized_dpp/pages/widget_tree.dart';
+import 'package:local_auth/local_auth.dart';
 import 'package:lottie/lottie.dart';
 
 class LogInPage extends StatefulWidget {
@@ -21,9 +22,48 @@ class LogInPage extends StatefulWidget {
 class _LoginPageState extends State<LogInPage> {
   final FirebaseAuth _auth = FirebaseAuth.instance;
   final _formKey = GlobalKey<FormState>();
+  final LocalAuthentication _bioAuth = LocalAuthentication();
 
+  bool canAuthenticateWithBiometrics = false;
+  bool canAuthenticate = false;
+  
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
+
+  @override
+  void initState() {
+    super.initState();
+    _checkBiometricSupport();
+  }
+
+  Future<void> _checkBiometricSupport() async {
+    try{
+      //Check if biometrics can be checked
+      print("Checking biometric support...");
+      final biometrics = await _bioAuth.canCheckBiometrics;
+
+      //Check if the device supports any kind of authentication (biometrics)
+      final supported = await _bioAuth.isDeviceSupported();
+
+      //Get list of available biometrics types
+      final List<BiometricType> availablebiometrics = await _bioAuth.getAvailableBiometrics();
+      print("Available biometrics length: ${availablebiometrics.length}");
+
+      setState(() {
+        canAuthenticateWithBiometrics = biometrics;
+        canAuthenticate = supported;
+      });
+
+      if (availablebiometrics.isNotEmpty) {
+        print("Available biometrics: ${availablebiometrics.first}");
+      } else {
+        print("No biometrics available.");
+      }
+    } catch (e) {
+      // Catch the MissingPluginExcption or any other error
+      print("Error checking biometrics: $e");
+    }
+  }
 
   @override
   void dispose() {

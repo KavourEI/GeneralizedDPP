@@ -10,7 +10,8 @@ class AccountDetailsSection extends StatefulWidget {
 
 class _AccountDetailsSectionState extends State<AccountDetailsSection> {
   String? _selectedLanguage = 'English';
-  String? _selectedTimeZone = 'UTC+2 (Athens)'; // TODO: Set the default value to be the selected one when the user started using the app
+  String? _selectedTimeZone =
+      'UTC+2 (Athens)'; // TODO: Set the default value to be the selected one when the user started using the app
 
   @override
   Widget build(BuildContext context) {
@@ -22,12 +23,12 @@ class _AccountDetailsSectionState extends State<AccountDetailsSection> {
           children: [
             Center(
               child: const Text(
-                'Account Details', 
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)
+                'Account Details',
+                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
               ),
             ),
             const SizedBox(height: 20),
-            
+
             ClipRRect(
               borderRadius: BorderRadiusGeometry.circular(25),
               child: Container(
@@ -36,32 +37,30 @@ class _AccountDetailsSectionState extends State<AccountDetailsSection> {
                 color: Theme.of(context).colorScheme.primaryContainer,
                 child: Column(
                   children: [
-
                     _buildSectionDevider("Profile Info"),
-            
-            _buildSettingItem('Name'),
-            _myTextField('John'),
 
-            const SizedBox(height: 10),
-            _buildSettingItem('Surname'),
-            _myTextField('Doe'),
+                    _buildSettingItem('Name'),
+                    _myTextField('John'),
 
-            const SizedBox(height: 10),
-            _buildSettingItem('Username'),
-            _myTextField('TheKrab'),
+                    const SizedBox(height: 10),
+                    _buildSettingItem('Surname'),
+                    _myTextField('Doe'),
 
-            const SizedBox(height: 10),
-            _buildSettingItem('Email'),
-            _myTextField('themis.kavour@icloud.com'),
+                    const SizedBox(height: 10),
+                    _buildSettingItem('Username'),
+                    _myTextField('TheKrab'),
 
-            const SizedBox(height: 10),
-            _buildSettingItem('Phone Number'),
-            _myTextField('0123456789'),
+                    const SizedBox(height: 10),
+                    _buildSettingItem('Email'),
+                    _myTextField('themis.kavour@icloud.com'),
 
-            const SizedBox(height: 10),
-            _buildSettingItem('Location'),
-            _myTextField('Athens, Greece'),
-                    
+                    const SizedBox(height: 10),
+                    _buildSettingItem('Phone Number'),
+                    _myTextField('0123456789'),
+
+                    const SizedBox(height: 10),
+                    _buildSettingItem('Location'),
+                    _myTextField('Athens, Greece'),
                   ],
                 ),
               ),
@@ -76,7 +75,6 @@ class _AccountDetailsSectionState extends State<AccountDetailsSection> {
                 color: Theme.of(context).colorScheme.primaryContainer,
                 child: Column(
                   children: [
-
                     _buildSectionDevider("Password & Security"),
 
                     const SizedBox(height: 20),
@@ -85,8 +83,8 @@ class _AccountDetailsSectionState extends State<AccountDetailsSection> {
                       children: [
                         _buildSettingItem('Password'),
                         ElevatedButton(
-                              onPressed: () => _downloadBillingHistory(),
-                              child: const Text('Change Password'),
+                          onPressed: () => _downloadBillingHistory(),
+                          child: const Text('Change Password'),
                         ),
                       ],
                     ),
@@ -106,17 +104,14 @@ class _AccountDetailsSectionState extends State<AccountDetailsSection> {
                           // boolean variable value
                           value: true,
                           // changes the state of the switch
-                          onChanged: (value) {
-                          },
+                          onChanged: (value) {},
                         ),
                       ],
                     ),
-                    
                   ],
                 ),
               ),
             ),
-
 
             const SizedBox(height: 20),
             ClipRRect(
@@ -127,7 +122,6 @@ class _AccountDetailsSectionState extends State<AccountDetailsSection> {
                 color: Theme.of(context).colorScheme.primaryContainer,
                 child: Column(
                   children: [
-
                     _buildSectionDevider("Login Methods"),
                     const SizedBox(height: 10),
                     Row(
@@ -144,8 +138,7 @@ class _AccountDetailsSectionState extends State<AccountDetailsSection> {
                           // boolean variable value
                           value: true,
                           // changes the state of the switch
-                          onChanged: (value) {
-                          },
+                          onChanged: (value) {},
                         ),
                       ],
                     ),
@@ -165,8 +158,7 @@ class _AccountDetailsSectionState extends State<AccountDetailsSection> {
                           // boolean variable value
                           value: true,
                           // changes the state of the switch
-                          onChanged: (value) {
-                          },
+                          onChanged: (value) {},
                         ),
                       ],
                     ),
@@ -186,36 +178,21 @@ class _AccountDetailsSectionState extends State<AccountDetailsSection> {
                           // boolean variable value
                           value: true,
                           // changes the state of the switch
-                          onChanged: (value) {
-                          },
+                          onChanged: (value) {},
                         ),
                       ],
                     ),
-                    
                   ],
                 ),
               ),
             ),
 
-            
-
-            
-            
-
             const SizedBox(height: 20),
-
-            
-
-
-
-
-
-
 
             // const SizedBox(height: 20),
             // _buildSettingItem('Membership Plan'),
             // _buildMembershipCarousel(),
-            
+
             // const SizedBox(height: 20),
             // Row(
             //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -241,20 +218,18 @@ class _AccountDetailsSectionState extends State<AccountDetailsSection> {
     );
   }
 
-  Widget _buildSectionDevider(String text){
+  Widget _buildSectionDevider(String text) {
     return Row(
       children: [
-        Expanded(child: Divider(thickness: 1,)),
+        Expanded(child: Divider(thickness: 1)),
         Padding(
-          padding: const EdgeInsets.symmetric( horizontal: 20),
+          padding: const EdgeInsets.symmetric(horizontal: 20),
           child: Text(
             text,
-            style: TextStyle(
-              fontWeight: FontWeight.bold,
-              fontSize: 18
-            ),),
+            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
+          ),
         ),
-        Expanded(child: Divider(thickness: 1,)),
+        Expanded(child: Divider(thickness: 1)),
       ],
     );
   }
@@ -262,10 +237,7 @@ class _AccountDetailsSectionState extends State<AccountDetailsSection> {
   Widget _buildSettingItem(String text) {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 8),
-      child: Text(
-        text, 
-        style: const TextStyle(fontSize: 16)
-      ),
+      child: Text(text, style: const TextStyle(fontSize: 16)),
     );
   }
 
@@ -299,15 +271,9 @@ class _AccountDetailsSectionState extends State<AccountDetailsSection> {
     return DropdownButton<String>(
       value: _selectedLanguage,
       items: const [
-        DropdownMenuItem(
-          value: 'English',
-          child: Text('English'),
-        ),
-        DropdownMenuItem(
-          value: 'Greek',
-          child: Text('Greek'),
-        ),
-      ], 
+        DropdownMenuItem(value: 'English', child: Text('English')),
+        DropdownMenuItem(value: 'Greek', child: Text('Greek')),
+      ],
       onChanged: (value) {
         setState(() {
           _selectedLanguage = value;
@@ -332,11 +298,8 @@ class _AccountDetailsSectionState extends State<AccountDetailsSection> {
           value: 'UTC+1 (London)',
           child: Text('UTC+1 (London)'),
         ),
-        DropdownMenuItem(
-          value: 'UTC (Lisbon)',
-          child: Text('UTC (Lisbon)'),
-        ),
-      ], 
+        DropdownMenuItem(value: 'UTC (Lisbon)', child: Text('UTC (Lisbon)')),
+      ],
       onChanged: (value) {
         setState(() {
           _selectedTimeZone = value;
@@ -349,6 +312,8 @@ class _AccountDetailsSectionState extends State<AccountDetailsSection> {
   }
 
   void _downloadBillingHistory() {
-    print('Downloading billing history...');  // TODO: Create a page to see all the available history billing information and be downloadable to a pdf
+    print(
+      'Downloading billing history...',
+    ); // TODO: Create a page to see all the available history billing information and be downloadable to a pdf
   }
 }

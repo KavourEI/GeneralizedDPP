@@ -46,7 +46,7 @@
 		</data>
 		<key>Frameworks/App.framework/App</key>
 		<data>
-		4Nhn7ZMh3PUmXwl8Tj4U8ezi7J0=
+		9Ci9wJnwhC2+eQUbEYcH2YMeBhM=
 		</data>
 		<key>Frameworks/App.framework/Info.plist</key>
 		<data>
@@ -54,7 +54,7 @@
 		</data>
 		<key>Frameworks/App.framework/_CodeSignature/CodeResources</key>
 		<data>
-		xLrxexeUCP1OBB10EjaG+rm62Fc=
+		rJtdwgTADaeYKOjKcNvKf1ugNtM=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/AssetManifest.bin</key>
 		<data>
@@ -70,7 +70,7 @@
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/NOTICES.Z</key>
 		<data>
-		a15PRs9LtmD+698MCUl6QWlKAlw=
+		UzqneP+OCI5nZJMTQf6cXB/CIE0=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/NativeAssetsManifest.json</key>
 		<data>
@@ -114,7 +114,7 @@
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/kernel_blob.bin</key>
 		<data>
-		X03whX4FJOk4Li8ZLyx43a494Bo=
+		JHa+A6a7sznpUkZpDptYHTfWftA=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf</key>
 		<data>
@@ -234,7 +234,7 @@
 		</data>
 		<key>Frameworks/FirebaseDatabase.framework/FirebaseDatabase</key>
 		<data>
-		SUNkXusdluA67nVV6WlIe941/+U=
+		RcV0BQxac+ugKCVU1LgQcH5NmgU=
 		</data>
 		<key>Frameworks/FirebaseDatabase.framework/Info.plist</key>
 		<data>
@@ -460,6 +460,18 @@
 		<data>
 		1GKSpq20OoFIxAuJBtHAw+vMZO8=
 		</data>
+		<key>Frameworks/flutter_localization.framework/Info.plist</key>
+		<data>
+		dExGQSRzJMf/HQlmp+phmTA4mVI=
+		</data>
+		<key>Frameworks/flutter_localization.framework/_CodeSignature/CodeResources</key>
+		<data>
+		si58CBrQvsw0pf3Y/NH7yAGzW64=
+		</data>
+		<key>Frameworks/flutter_localization.framework/flutter_localization</key>
+		<data>
+		Lua+J/wU+1xdISJHiSVOMN7yGRQ=
+		</data>
 		<key>Frameworks/grpc.framework/Info.plist</key>
 		<data>
 		2UEVT7RF7StpXieQ+piXgYZ761Q=
@@ -528,6 +540,26 @@
 		<data>
 		JTGYQTSkuJ7uGfD1SfjQTq3ngyk=
 		</data>
+		<key>Frameworks/local_auth_darwin.framework/Info.plist</key>
+		<data>
+		ZyCEFCpsG3tfX3dKv/pdZ2kyc1U=
+		</data>
+		<key>Frameworks/local_auth_darwin.framework/_CodeSignature/CodeResources</key>
+		<data>
+		+CELQ8aoDaRzEbL6Mx5EhP/ggTU=
+		</data>
+		<key>Frameworks/local_auth_darwin.framework/local_auth_darwin</key>
+		<data>
+		evMYpDwfikvg1+h2MrXMJ6B3gVg=
+		</data>
+		<key>Frameworks/local_auth_darwin.framework/local_auth_darwin_privacy.bundle/Info.plist</key>
+		<data>
+		df73pBjyPzqqc5vm8NiRHwFcD7U=
+		</data>
+		<key>Frameworks/local_auth_darwin.framework/local_auth_darwin_privacy.bundle/PrivacyInfo.xcprivacy</key>
+		<data>
+		/LX0ZlwxwIAIhjZaDB8EiH5KpXA=
+		</data>
 		<key>Frameworks/nanopb.framework/Info.plist</key>
 		<data>
 		+Ub9hRCfl8+8fn7yTAMU281PRg4=
@@ -568,13 +600,33 @@
 		<data>
 		PFHYbs0V3eUFDWQyYQcwEetuqEk=
 		</data>
+		<key>Frameworks/shared_preferences_foundation.framework/Info.plist</key>
+		<data>
+		jpqgcPIBKzuJWv1zYbDXZoMgSKM=
+		</data>
+		<key>Frameworks/shared_preferences_foundation.framework/_CodeSignature/CodeResources</key>
+		<data>
+		20EDVstznqY2o7tcxNkV3bD1Wbs=
+		</data>
+		<key>Frameworks/shared_preferences_foundation.framework/shared_preferences_foundation</key>
+		<data>
+		vrs7KeyQWc5iYiOiKsZN3wOidW0=
+		</data>
+		<key>Frameworks/shared_preferences_foundation.framework/shared_preferences_foundation_privacy.bundle/Info.plist</key>
+		<data>
+		3c/wQ7FAZtP+OVpGMeKomvKS9LE=
+		</data>
+		<key>Frameworks/shared_preferences_foundation.framework/shared_preferences_foundation_privacy.bundle/PrivacyInfo.xcprivacy</key>
+		<data>
+		6uLTlq7fgHHWA8emYDf4ImHC+AY=
+		</data>
 		<key>GoogleService-Info.plist</key>
 		<data>
 		IiS8PbDsnidSRiGGIg38Dcr6sM4=
 		</data>
 		<key>Info.plist</key>
 		<data>
-		H92AjzYHQUR1AWS1GPEMVzdFwX8=
+		QoFVlu5eFolGuiuBzHG2TPj/Qh8=
 		</data>
 		<key>PkgInfo</key>
 		<data>
@@ -582,7 +634,7 @@
 		</data>
 		<key>Runner.debug.dylib</key>
 		<data>
-		CaOnbY6CCaFTkHXBgG8oICQ77no=
+		FvPZ19Y10lXNq5RKRvWICH4kPLM=
 		</data>
 		<key>__preview.dylib</key>
 		<data>
@@ -665,7 +717,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			iXoft97z5qXjnwADpM47vlFTR5JczBsX9nJOVmk+Hd8=
+			uP+QzFghiU5miaDBLUoffsCXG5xb85Wx0YIkzELBJQ0=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/Info.plist</key>
@@ -679,7 +731,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			jOdbDLE5A2sYOtS4087ncMfjM4/2TqTzUcVdwT0pPG4=
+			cREMjgD5hEzX+JjPZKEaWSOSap+AOoRRSj3KQj8iwsw=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/AssetManifest.bin</key>
@@ -707,7 +759,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			L93EEJSOY4SZZKmdq3JAQntGq+J8mGY+0gck/B7Obd8=
+			zQPbUAFD/TyR6GejlIWW4EOKO1khh2kV3p604bUAqpw=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/NativeAssetsManifest.json</key>
@@ -784,7 +836,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			5JCD8yX9YhWxrxorCYVYgNRowZgnzvPRPGQ3MZNozXg=
+			nYOr4mU032B+2qRgZ8rIPCdTkts+2ZGdekNMmOmyP6A=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf</key>
@@ -994,7 +1046,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			qsSj+C8Rw95jrvjRqw8vxOtk1sWFNVOEHQJ/hR0SCq0=
+			OPi4Vb1BvUElO0hddqkHDCEeJxn0l1xrDZeeNndAEPc=
 			</data>
 		</dict>
 		<key>Frameworks/FirebaseDatabase.framework/Info.plist</key>
@@ -1389,6 +1441,27 @@
 			8jIheunt8qtqVBoo7/UM/gUwPCtHVv/5XMpy7MvDuJg=
 			</data>
 		</dict>
+		<key>Frameworks/flutter_localization.framework/Info.plist</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			MK/cwYQhdf8VaBMdRruP3k72R7WpnNZnF8LvCC4XBo4=
+			</data>
+		</dict>
+		<key>Frameworks/flutter_localization.framework/_CodeSignature/CodeResources</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			UUlSiJfgtbJEOASEJPLhjHfz8Ic71ppejMCIwIC8XEw=
+			</data>
+		</dict>
+		<key>Frameworks/flutter_localization.framework/flutter_localization</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			5tPGbwgsznJDjHbIpd6v1wmdHVXcD4rns4kR2h2CKGA=
+			</data>
+		</dict>
 		<key>Frameworks/grpc.framework/Info.plist</key>
 		<dict>
 			<key>hash2</key>
@@ -1508,6 +1581,41 @@
 			CsAKC37/AHnc4lLimrQdcc9YxslP5OROoRDO9cYpcOE=
 			</data>
 		</dict>
+		<key>Frameworks/local_auth_darwin.framework/Info.plist</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			NG/1EiEsl/fAOw81dFxWjeFX5XipQCSL7NiP5R95EL8=
+			</data>
+		</dict>
+		<key>Frameworks/local_auth_darwin.framework/_CodeSignature/CodeResources</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			4f0dGsP84aTC44/8+2GdJHlXmXEopFKCwQzLXAdzSRo=
+			</data>
+		</dict>
+		<key>Frameworks/local_auth_darwin.framework/local_auth_darwin</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			bQ/F0+2jJZ+EEJwU1c8vkQ+hFYgo9UNut3z208yKifI=
+			</data>
+		</dict>
+		<key>Frameworks/local_auth_darwin.framework/local_auth_darwin_privacy.bundle/Info.plist</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			FynNKKOpnpPWCvHrTaTlm1Hwr2BTsQecr0+rLqNWqoA=
+			</data>
+		</dict>
+		<key>Frameworks/local_auth_darwin.framework/local_auth_darwin_privacy.bundle/PrivacyInfo.xcprivacy</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			bS2g2NkwIn1CjB2TY7CtbjoS4sm2jFzilxWKdBL8jDE=
+			</data>
+		</dict>
 		<key>Frameworks/nanopb.framework/Info.plist</key>
 		<dict>
 			<key>hash2</key>
@@ -1578,6 +1686,41 @@
 			A7LHCDOjMaKx79Ef8WjtAqjq39Xn0fvzDuzHUJpK6kc=
 			</data>
 		</dict>
+		<key>Frameworks/shared_preferences_foundation.framework/Info.plist</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			6KtEW79cUG8Vz9Qd9ej3c7tWTcWSgkQsDY0hgmXTv4Q=
+			</data>
+		</dict>
+		<key>Frameworks/shared_preferences_foundation.framework/_CodeSignature/CodeResources</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			Jb0jyPWyOcUrePM2EClCLgDkpz7OV693bS4nWuTGGu8=
+			</data>
+		</dict>
+		<key>Frameworks/shared_preferences_foundation.framework/shared_preferences_foundation</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			DJgZJJKb9PtSI6wvHgGdBtRVhrcewMCohE8ri48rCdU=
+			</data>
+		</dict>
+		<key>Frameworks/shared_preferences_foundation.framework/shared_preferences_foundation_privacy.bundle/Info.plist</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			7OXg2wrRF0XOrfwUzyJpqwFxCt1+mxqDLjP3C6cLs00=
+			</data>
+		</dict>
+		<key>Frameworks/shared_preferences_foundation.framework/shared_preferences_foundation_privacy.bundle/PrivacyInfo.xcprivacy</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			BWQouTi9VwGKYAGdFcPB7i+nJ/I2h1mLu9k0hIsYCxo=
+			</data>
+		</dict>
 		<key>GoogleService-Info.plist</key>
 		<dict>
 			<key>hash2</key>
@@ -1589,7 +1732,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			HqeYm6mJ5Xro1Gg7oAcRn+30J3zoQXRuI3M4NbpMVSE=
+			v/4YpCmbWS4PXIt8ib9GdMrjudEGmGlBNS2bBtQvJ+c=
 			</data>
 		</dict>
 		<key>__preview.dylib</key>

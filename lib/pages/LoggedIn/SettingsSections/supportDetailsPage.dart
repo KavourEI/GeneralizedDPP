@@ -10,7 +10,8 @@ class SupportDetailsSection extends StatefulWidget {
 
 class _supportDetailsState extends State<SupportDetailsSection> {
   String? _selectedLanguage = 'English';
-  String? _selectedTimeZone = 'UTC+2 (Athens)'; // TODO: Set the default value to be the selected one when the user started using the app
+  String? _selectedTimeZone =
+      'UTC+2 (Athens)'; // TODO: Set the default value to be the selected one when the user started using the app
 
   @override
   Widget build(BuildContext context) {
@@ -22,49 +23,58 @@ class _supportDetailsState extends State<SupportDetailsSection> {
           children: [
             Center(
               child: const Text(
-                'Support & Feedback', 
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)
+                'Support & Feedback',
+                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
               ),
             ),
             const SizedBox(height: 20),
 
-            _buildSectionDevider("General Information"),
-            
-            _buildSettingItem('Submit feedback / Report an Issue'),
-            _myTextField(' --- '),
+            ClipRRect(
+              borderRadius: BorderRadiusGeometry.circular(25),
+              child: Container(
+                padding: EdgeInsets.all(35),
+                width: double.infinity,
+                color: Theme.of(context).colorScheme.primaryContainer,
+                child: Column(
+                  children: [
+                    _buildSectionDevider("General Information"),
 
-            const SizedBox(height: 10),
-            _buildSettingItem('Contact Support'),
-            _myTextField(' --- '),
+                    _buildSettingItem('Submit feedback / Report an Issue'),
+                    _myTextField(' --- '),
 
-            const SizedBox(height: 10),
-            _buildSettingItem(' Help Center / Documentations / FAQ'),
-            _myTextField(' --- '),
+                    const SizedBox(height: 10),
+                    _buildSettingItem('Contact Support'),
+                    _myTextField(' --- '),
 
-            const SizedBox(height: 10),
-            _buildSettingItem('Product Version'),
-            _myTextField('0.0.1'),
+                    const SizedBox(height: 10),
+                    _buildSettingItem(' Help Center / Documentations / FAQ'),
+                    _myTextField(' --- '),
 
+                    const SizedBox(height: 10),
+                    _buildSettingItem('Product Version'),
+                    _myTextField('0.0.1'),
+                  ],
+                ),
+              ),
+            ),
           ],
         ),
       ),
     );
   }
 
-  Widget _buildSectionDevider(String text){
+  Widget _buildSectionDevider(String text) {
     return Row(
       children: [
-        Expanded(child: Divider(thickness: 1,)),
+        Expanded(child: Divider(thickness: 1)),
         Padding(
-          padding: const EdgeInsets.symmetric( horizontal: 20),
+          padding: const EdgeInsets.symmetric(horizontal: 20),
           child: Text(
             text,
-            style: TextStyle(
-              fontWeight: FontWeight.bold,
-              fontSize: 18
-            ),),
+            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
+          ),
         ),
-        Expanded(child: Divider(thickness: 1,)),
+        Expanded(child: Divider(thickness: 1)),
       ],
     );
   }
@@ -72,10 +82,7 @@ class _supportDetailsState extends State<SupportDetailsSection> {
   Widget _buildSettingItem(String text) {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 8),
-      child: Text(
-        text, 
-        style: const TextStyle(fontSize: 16)
-      ),
+      child: Text(text, style: const TextStyle(fontSize: 16)),
     );
   }
 
@@ -109,15 +116,9 @@ class _supportDetailsState extends State<SupportDetailsSection> {
     return DropdownButton<String>(
       value: _selectedLanguage,
       items: const [
-        DropdownMenuItem(
-          value: 'English',
-          child: Text('English'),
-        ),
-        DropdownMenuItem(
-          value: 'Greek',
-          child: Text('Greek'),
-        ),
-      ], 
+        DropdownMenuItem(value: 'English', child: Text('English')),
+        DropdownMenuItem(value: 'Greek', child: Text('Greek')),
+      ],
       onChanged: (value) {
         setState(() {
           _selectedLanguage = value;
@@ -142,11 +143,8 @@ class _supportDetailsState extends State<SupportDetailsSection> {
           value: 'UTC+1 (London)',
           child: Text('UTC+1 (London)'),
         ),
-        DropdownMenuItem(
-          value: 'UTC (Lisbon)',
-          child: Text('UTC (Lisbon)'),
-        ),
-      ], 
+        DropdownMenuItem(value: 'UTC (Lisbon)', child: Text('UTC (Lisbon)')),
+      ],
       onChanged: (value) {
         setState(() {
           _selectedTimeZone = value;
@@ -159,6 +157,8 @@ class _supportDetailsState extends State<SupportDetailsSection> {
   }
 
   void _downloadBillingHistory() {
-    print('Downloading billing history...');  // TODO: Create a page to see all the available history billing information and be downloadable to a pdf
+    print(
+      'Downloading billing history...',
+    ); // TODO: Create a page to see all the available history billing information and be downloadable to a pdf
   }
 }

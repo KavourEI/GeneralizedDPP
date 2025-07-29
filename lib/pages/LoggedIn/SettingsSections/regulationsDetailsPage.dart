@@ -10,7 +10,8 @@ class RegulationsDetailsSection extends StatefulWidget {
 
 class _regulationsState extends State<RegulationsDetailsSection> {
   String? _selectedLanguage = 'English';
-  String? _selectedTimeZone = 'UTC+2 (Athens)'; // TODO: Set the default value to be the selected one when the user started using the app
+  String? _selectedTimeZone =
+      'UTC+2 (Athens)'; // TODO: Set the default value to be the selected one when the user started using the app
 
   @override
   Widget build(BuildContext context) {
@@ -22,49 +23,60 @@ class _regulationsState extends State<RegulationsDetailsSection> {
           children: [
             Center(
               child: const Text(
-                'Regulatory Compliance', 
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)
+                'Regulatory Compliance',
+                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
               ),
             ),
             const SizedBox(height: 20),
 
-            _buildSectionDevider("General Information"),
-            
-            _buildSettingItem('Compliance Profiles'),
-            _myTextField('EU ESPR / FSC / PEFC'),
+            ClipRRect(
+              borderRadius: BorderRadiusGeometry.circular(25),
+              child: Container(
+                padding: EdgeInsets.all(35),
+                width: double.infinity,
+                color: Theme.of(context).colorScheme.primaryContainer,
+                child: Column(
+                  children: [
+                    _buildSectionDevider("General Information"),
 
-            const SizedBox(height: 10),
-            _buildSettingItem('Custom disclaimers or compliance document'),
-            _myTextField(' --- '),
+                    _buildSettingItem('Compliance Profiles'),
+                    _myTextField('EU ESPR / FSC / PEFC'),
 
-            const SizedBox(height: 10),
-            _buildSettingItem('Certificates'),
-            _myTextField(' --- '),
+                    const SizedBox(height: 10),
+                    _buildSettingItem(
+                      'Custom disclaimers or compliance document',
+                    ),
+                    _myTextField(' --- '),
 
-            const SizedBox(height: 10),
-            _buildSettingItem('How your data are used'),
-            _myTextField(' --- '),
+                    const SizedBox(height: 10),
+                    _buildSettingItem('Certificates'),
+                    _myTextField(' --- '),
 
+                    const SizedBox(height: 10),
+                    _buildSettingItem('How your data are used'),
+                    _myTextField(' --- '),
+                  ],
+                ),
+              ),
+            ),
           ],
         ),
       ),
     );
   }
 
-  Widget _buildSectionDevider(String text){
+  Widget _buildSectionDevider(String text) {
     return Row(
       children: [
-        Expanded(child: Divider(thickness: 1,)),
+        Expanded(child: Divider(thickness: 1)),
         Padding(
-          padding: const EdgeInsets.symmetric( horizontal: 20),
+          padding: const EdgeInsets.symmetric(horizontal: 20),
           child: Text(
             text,
-            style: TextStyle(
-              fontWeight: FontWeight.bold,
-              fontSize: 18
-            ),),
+            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
+          ),
         ),
-        Expanded(child: Divider(thickness: 1,)),
+        Expanded(child: Divider(thickness: 1)),
       ],
     );
   }
@@ -72,10 +84,7 @@ class _regulationsState extends State<RegulationsDetailsSection> {
   Widget _buildSettingItem(String text) {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 8),
-      child: Text(
-        text, 
-        style: const TextStyle(fontSize: 16)
-      ),
+      child: Text(text, style: const TextStyle(fontSize: 16)),
     );
   }
 
@@ -109,15 +118,9 @@ class _regulationsState extends State<RegulationsDetailsSection> {
     return DropdownButton<String>(
       value: _selectedLanguage,
       items: const [
-        DropdownMenuItem(
-          value: 'English',
-          child: Text('English'),
-        ),
-        DropdownMenuItem(
-          value: 'Greek',
-          child: Text('Greek'),
-        ),
-      ], 
+        DropdownMenuItem(value: 'English', child: Text('English')),
+        DropdownMenuItem(value: 'Greek', child: Text('Greek')),
+      ],
       onChanged: (value) {
         setState(() {
           _selectedLanguage = value;
@@ -142,11 +145,8 @@ class _regulationsState extends State<RegulationsDetailsSection> {
           value: 'UTC+1 (London)',
           child: Text('UTC+1 (London)'),
         ),
-        DropdownMenuItem(
-          value: 'UTC (Lisbon)',
-          child: Text('UTC (Lisbon)'),
-        ),
-      ], 
+        DropdownMenuItem(value: 'UTC (Lisbon)', child: Text('UTC (Lisbon)')),
+      ],
       onChanged: (value) {
         setState(() {
           _selectedTimeZone = value;
@@ -159,6 +159,8 @@ class _regulationsState extends State<RegulationsDetailsSection> {
   }
 
   void _downloadBillingHistory() {
-    print('Downloading billing history...');  // TODO: Create a page to see all the available history billing information and be downloadable to a pdf
+    print(
+      'Downloading billing history...',
+    ); // TODO: Create a page to see all the available history billing information and be downloadable to a pdf
   }
 }

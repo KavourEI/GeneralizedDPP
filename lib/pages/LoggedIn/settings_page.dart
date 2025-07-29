@@ -21,13 +21,13 @@ class _settingsState extends State<SettingsPage> {
   int _selectedSection = 0;
 
     @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Theme.of(context).colorScheme.surface,
-      appBar: AppBar(
-        title: Text("Settings Page"),
-        automaticallyImplyLeading: true,
-      ),
+    Widget build(BuildContext context) {
+      return Scaffold(
+        backgroundColor: Theme.of(context).colorScheme.surface,
+        appBar: AppBar(
+          title: Text("Settings Page"),
+          automaticallyImplyLeading: true,
+        ),
       
       drawer: _BuildDrawer(),
       
