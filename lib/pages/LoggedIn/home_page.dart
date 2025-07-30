@@ -45,7 +45,6 @@ class _HomePageState extends State<HomePage> {
 
       final userDoc = await FirebaseFirestore.instance.collection('users').doc(user.uid).get();
       
-
       if (userDoc.exists) {
         final data = userDoc.data();
         setState(() {
