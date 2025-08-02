@@ -1,5 +1,7 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:generalized_dpp/pages/LoggedIn/alterDatabase/addSingleProduct.dart';
 import 'package:generalized_dpp/pages/LoggedIn/product_detail_page.dart';
 
 class ProductListPage extends StatefulWidget {
@@ -74,7 +76,7 @@ class _ProductListPageState extends State<ProductListPage> {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (_) => ProductDetailPage(product: product),
+                            builder: (_) => ProductDetailPage(product: product, documentID: product['profile_code'],),
                           ),
                         );
                       },
@@ -106,7 +108,15 @@ class _ProductListPageState extends State<ProductListPage> {
                       <PopupMenuEntry<String>>[
                         PopupMenuItem(
                           value: 'Add Single',
-                          child: Text('Add single product'),  
+                          child: TextButton(onPressed: () {
+                            Navigator.pushReplacement(
+                              context, 
+                              CupertinoPageRoute(
+                                builder: (context) => SingleAdditionPage()
+                              )
+                            );
+                          }, child: Text('Add a single product')) 
+
                         ),
                         PopupMenuItem(
                           value: 'Add multiple products',
