@@ -1,7 +1,10 @@
+import 'dart:async';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:generalized_dpp/pages/LoggedIn/SettingsSections/supportDetailsPage.dart';
 import 'package:generalized_dpp/pages/LoggedOut/langing_page.dart';
 import 'package:local_auth/error_codes.dart';
 
@@ -13,22 +16,152 @@ class AccountDetailsSection extends StatefulWidget {
 }
 
 class _AccountDetailsSectionState extends State<AccountDetailsSection> {
-  String? _selectedLanguage = 'English';
-  String? _selectedTimeZone =
-      'UTC+2 (Athens)'; // TODO: Set the default value to be the selected one when the user started using the app
+  final TextEditingController _controllerName = TextEditingController();
+  final TextEditingController _controllerSurname = TextEditingController();
+  final TextEditingController _controllerUsername = TextEditingController();
+  final TextEditingController _controllerEmail = TextEditingController();
+  final TextEditingController _controllerPhoneNumber = TextEditingController();
+  final TextEditingController _controllerLocation = TextEditingController();
+  final TextEditingController _controllerCountry = TextEditingController();
+
+  // String textName = '';
+  // String textSurname = '';
+  // String textUsername = '';
+  // String textEmail = '';
+  // String textPhoneNumber = '';
+  // String textLocation = '';
+
+  bool _isloading = true;
+  bool _isSaving = false;
+  String? _errorMessage;
+
+  @override
+  void initState(){
+    super.initState();
+    _fetchUserData();
+
+    // _controllerName.addListener(() {
+    //   final String text = _controllerName.text;
+    // });
+
+    // _controllerSurname.addListener(() {
+    //   final String text = _controllerSurname.text;
+    // });
+
+    // _controllerUsername.addListener(() {
+    //   final String text = _controllerUsername.text;
+    // });
+
+    // _controllerEmail.addListener(() {
+    //   final String text = _controllerEmail.text;
+    // });
+
+    // _controllerPhoneNumber.addListener(() {
+    //   final String text = _controllerPhoneNumber.text;
+    // });
+
+    // _controllerLocation.addListener(() {
+    //   final String text = _controllerLocation.text;
+    // });
+  }
+
+  Future<void> _fetchUserData() async {
+    try {
+      final user = FirebaseAuth.instance.currentUser;
+      if (user == null) return;
+      
+      DocumentSnapshot userDoc = await FirebaseFirestore.instance
+        .collection('users').
+        doc(user.uid)
+        .get();
+
+      setState(() {
+        if (userDoc.exists) {
+          final data = userDoc.data() as Map<String, dynamic>? ?? {};
+          _controllerName.text = data['firstName'] ?? '';
+          _controllerSurname.text = data['lastName'] ?? '';
+          _controllerUsername.text = data['userName'] ?? '';
+          _controllerEmail.text = data['email'] ?? '';
+          _controllerPhoneNumber.text = data['phone'] ?? '';
+          _controllerLocation.text = data['locationName'] ?? '';
+          _controllerCountry.text = data['country'] ?? '';
+        } else {
+          _controllerEmail.text = user.email ?? '';
+        }
+        _isloading = false;
+      });
+    } catch (e) {
+      setState(() {
+        _errorMessage = 'Failed to load user data';
+        _isloading = false;
+      });
+    }
+  }
+
+  Future<void> _saveUserData() async {
+    setState(() {
+      _isSaving = true;
+      _errorMessage = null;
+    });
+
+    try {
+      final user = FirebaseAuth.instance.currentUser;
+      if (user == null) throw Exception('User not logged in');
+
+      await FirebaseFirestore.instance
+        .collection('users')
+        .doc(user.uid)
+        .set({
+        'firstName': _controllerName.text,
+        'lastName': _controllerSurname.text,
+        'userName': _controllerUsername.text,
+        'email': _controllerEmail.text,
+        'phone': _controllerPhoneNumber.text,
+        'locationName': _controllerLocation.text,
+        'country': _controllerCountry.text,
+        'lastUpdated': FieldValue.serverTimestamp(),
+      }, SetOptions(merge: true));  //Is this going to add them at the bottom or replace?
+
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('Profile update succesfully')),
+      );
+    } catch (e) {
+      setState(() {
+        _errorMessage = 'Failed to update profile: ${e.toString()}';
+      });
+    } finally {
+      setState(() {
+        _isSaving = false;
+      });
+    }
+  }
+  
+
+  @override
+  void dispose() {
+    _controllerName.dispose();
+    _controllerSurname.dispose();
+    _controllerUsername.dispose();
+    _controllerEmail.dispose();
+    _controllerPhoneNumber.dispose();
+    _controllerLocation.dispose();
+    _controllerCountry.dispose();
+    super.dispose();
+  }
+
 
   Widget _buildSectionDevider(String text) {
     return Row(
       children: [
-        Expanded(child: Divider(thickness: 1)),
+        const Expanded(child: Divider(thickness: 1)),
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 20),
           child: Text(
             text,
-            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
+            style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
           ),
         ),
-        Expanded(child: Divider(thickness: 1)),
+        const Expanded(child: Divider(thickness: 1)),
       ],
     );
   }
@@ -40,80 +173,14 @@ class _AccountDetailsSectionState extends State<AccountDetailsSection> {
     );
   }
 
-  Widget _myTextField(String text) {
+  Widget _myTextField(String labeltext, TextEditingController controller) {
     return TextField(
+      controller : controller,
       decoration: InputDecoration(
         border: const OutlineInputBorder(),
-        labelText: text,
+        labelText: labeltext,
       ),
     );
-  }
-
-  Widget _buildMembershipCarousel() {
-    // TODO: Implement carousel of three cards for plans
-    return Container(
-      height: 100,
-      decoration: BoxDecoration(
-        border: Border.all(color: Colors.grey),
-        borderRadius: BorderRadius.circular(8),
-      ),
-      child: const Center(
-        child: Text(
-          'Membership Plans Carousel (TODO)',
-          style: TextStyle(color: Colors.grey),
-        ),
-      ),
-    );
-  }
-
-  Widget _buildLanguageDropdown() {
-    return DropdownButton<String>(
-      value: _selectedLanguage,
-      items: const [
-        DropdownMenuItem(value: 'English', child: Text('English')),
-        DropdownMenuItem(value: 'Greek', child: Text('Greek')),
-      ],
-      onChanged: (value) {
-        setState(() {
-          _selectedLanguage = value;
-        });
-        print(value);
-      },
-      borderRadius: BorderRadius.circular(25),
-      dropdownColor: Colors.blueGrey,
-      isExpanded: true,
-    );
-  }
-
-  Widget _buildTimeZoneDropdown() {
-    return DropdownButton<String>(
-      value: _selectedTimeZone,
-      items: const [
-        DropdownMenuItem(
-          value: 'UTC+2 (Athens)',
-          child: Text('UTC+2 (Athens)'),
-        ),
-        DropdownMenuItem(
-          value: 'UTC+1 (London)',
-          child: Text('UTC+1 (London)'),
-        ),
-        DropdownMenuItem(value: 'UTC (Lisbon)', child: Text('UTC (Lisbon)')),
-      ],
-      onChanged: (value) {
-        setState(() {
-          _selectedTimeZone = value;
-        });
-      },
-      borderRadius: BorderRadius.circular(25),
-      dropdownColor: Colors.blueGrey,
-      isExpanded: true,
-    );
-  }
-
-  void _downloadBillingHistory() {
-    print(
-      'Downloading billing history...',
-    ); // TODO: Create a page to see all the available history billing information and be downloadable to a pdf
   }
 
   Future<void> reauthenticateUser(String email, String password) async {
@@ -193,6 +260,7 @@ class _AccountDetailsSectionState extends State<AccountDetailsSection> {
     );
   }
 
+
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
@@ -201,13 +269,6 @@ class _AccountDetailsSectionState extends State<AccountDetailsSection> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Center(
-              child: const Text(
-                'Account Details',
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-              ),
-            ),
-            const SizedBox(height: 20),
 
             ClipRRect(
               borderRadius: BorderRadiusGeometry.circular(25),
@@ -220,27 +281,45 @@ class _AccountDetailsSectionState extends State<AccountDetailsSection> {
                     _buildSectionDevider("Profile Info"),
 
                     _buildSettingItem('Name'),
-                    _myTextField('John'),
+                    _myTextField(
+                      'Name', 
+                      _controllerName),
 
                     const SizedBox(height: 10),
                     _buildSettingItem('Surname'),
-                    _myTextField('Doe'),
+                    _myTextField(
+                      'Surname',
+                      _controllerSurname),
 
                     const SizedBox(height: 10),
                     _buildSettingItem('Username'),
-                    _myTextField('TheKrab'),
+                    _myTextField(
+                      'Username',
+                      _controllerUsername),
 
                     const SizedBox(height: 10),
                     _buildSettingItem('Email'),
-                    _myTextField('themis.kavour@icloud.com'),
+                    _myTextField(
+                      'Email',
+                      _controllerEmail),
 
                     const SizedBox(height: 10),
                     _buildSettingItem('Phone Number'),
-                    _myTextField('0123456789'),
+                    _myTextField(
+                      'Phone Number',
+                      _controllerPhoneNumber),
 
                     const SizedBox(height: 10),
                     _buildSettingItem('Location'),
-                    _myTextField('Athens, Greece'),
+                    _myTextField(
+                      'Location',
+                      _controllerLocation),
+
+                    const SizedBox(height: 10),
+                    _buildSettingItem('Country'),
+                    _myTextField(
+                      'Country',
+                      _controllerCountry),
                   ],
                 ),
               ),
@@ -256,18 +335,7 @@ class _AccountDetailsSectionState extends State<AccountDetailsSection> {
                 child: Column(
                   children: [
                     _buildSectionDevider("Password & Security"),
-
-                    const SizedBox(height: 20),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        _buildSettingItem('Password'),
-                        ElevatedButton(
-                          onPressed: () => _downloadBillingHistory(),
-                          child: const Text('Change Password'),
-                        ),
-                      ],
-                    ),
+                    
 
                     const SizedBox(height: 10),
                     Row(
@@ -275,10 +343,8 @@ class _AccountDetailsSectionState extends State<AccountDetailsSection> {
                       children: [
                         _buildSettingItem('2-Factor Authentication (2FA)'),
                         CupertinoSwitch(
-                          // overrides the default green color of the track
-                          activeTrackColor: Colors.green,
-                          // color of the round icon, which moves from right to left
-                          thumbColor: Colors.red,
+                          activeTrackColor: Colors.blue.shade100,
+                          thumbColor: Colors.black,
                           // when the switch is off
                           inactiveTrackColor: Colors.black12,
                           // boolean variable value
@@ -309,15 +375,10 @@ class _AccountDetailsSectionState extends State<AccountDetailsSection> {
                       children: [
                         _buildSettingItem('Email/Password'),
                         CupertinoSwitch(
-                          // overrides the default green color of the track
-                          activeTrackColor: Colors.green,
-                          // color of the round icon, which moves from right to left
-                          thumbColor: Colors.red,
-                          // when the switch is off
+                          activeTrackColor: Colors.blue.shade100,
+                          thumbColor: Colors.black,
                           inactiveTrackColor: Colors.black12,
-                          // boolean variable value
                           value: true,
-                          // changes the state of the switch
                           onChanged: (value) {},
                         ),
                       ],
@@ -329,15 +390,10 @@ class _AccountDetailsSectionState extends State<AccountDetailsSection> {
                       children: [
                         _buildSettingItem('Google Account'),
                         CupertinoSwitch(
-                          // overrides the default green color of the track
-                          activeTrackColor: Colors.green,
-                          // color of the round icon, which moves from right to left
-                          thumbColor: Colors.red,
-                          // when the switch is off
+                          activeTrackColor: Colors.blue.shade100,
+                          thumbColor: Colors.black,
                           inactiveTrackColor: Colors.black12,
-                          // boolean variable value
                           value: true,
-                          // changes the state of the switch
                           onChanged: (value) {},
                         ),
                       ],
@@ -349,15 +405,10 @@ class _AccountDetailsSectionState extends State<AccountDetailsSection> {
                       children: [
                         _buildSettingItem('Apple Account'),
                         CupertinoSwitch(
-                          // overrides the default green color of the track
-                          activeTrackColor: Colors.green,
-                          // color of the round icon, which moves from right to left
-                          thumbColor: Colors.red,
-                          // when the switch is off
+                          activeTrackColor: Colors.blue.shade100,
+                          thumbColor: Colors.black,
                           inactiveTrackColor: Colors.black12,
-                          // boolean variable value
                           value: true,
-                          // changes the state of the switch
                           onChanged: (value) {},
                         ),
                       ],
@@ -409,6 +460,18 @@ class _AccountDetailsSectionState extends State<AccountDetailsSection> {
                   );
                 },
               ),
+            ),
+
+            SizedBox(height: 20,),
+
+            SizedBox(
+               width: double.infinity,
+               child: ElevatedButton(
+                onPressed: _isSaving ? null : _saveUserData, 
+                child: _isSaving
+                  ? const CircularProgressIndicator()
+                  : const Text('Save Changes'),
+               )
             ),
           ],
         ),

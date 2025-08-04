@@ -6,6 +6,7 @@ import 'package:generalized_dpp/pages/LoggedIn/SettingsSections/organizationDeta
 import 'package:generalized_dpp/pages/LoggedIn/SettingsSections/privacyDetailsPage.dart';
 import 'package:generalized_dpp/pages/LoggedIn/SettingsSections/regulationsDetailsPage.dart';
 import 'package:generalized_dpp/pages/LoggedIn/SettingsSections/supportDetailsPage.dart';
+import 'package:generalized_dpp/pages/LoggedIn/SettingsSections/test.dart';
 import 'package:lottie/lottie.dart';
 
 
@@ -25,7 +26,7 @@ class _settingsState extends State<SettingsPage> {
       return Scaffold(
         backgroundColor: Theme.of(context).colorScheme.surface,
         appBar: AppBar(
-          title: Text("Settings Page"),
+          title: _pageTitle(),
           automaticallyImplyLeading: true,
         ),
       
@@ -33,6 +34,27 @@ class _settingsState extends State<SettingsPage> {
       
       body: _BuildSelectedSection(),
 
+    );
+  }
+
+  Widget _pageTitle() {
+    return Text(
+      _selectedSection == 0
+          ? 'Account Details'
+          : _selectedSection == 1
+              ? 'Organization / Company'
+              : _selectedSection == 2
+                  ? 'Notifications'
+                  : _selectedSection == 3
+                      ? 'Privacy and Data'
+                      : _selectedSection == 4
+                          ? 'Localization and Language'
+                          : _selectedSection == 5
+                              ? 'Regulatory Compliance'
+                              : _selectedSection == 6
+                                  ? 'Support & Feedback'
+                                  : 'Unknown',
+      style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
     );
   }
 
@@ -45,6 +67,7 @@ class _settingsState extends State<SettingsPage> {
     case 4 : return const LocalizationDetailsSection();
     case 5 : return const RegulationsDetailsSection();
     case 6 : return const SupportDetailsSection();
+    case 7 : return const TestPage();
     default :
       return const Center(child: Text ('Section not found'));
     }
@@ -69,12 +92,13 @@ class _settingsState extends State<SettingsPage> {
           ),      
           SizedBox(height: 40),
           _buildDrawerItem(0, Icons.account_circle, 'Account Details'),
-          _buildDrawerItem(1, Icons.apartment_sharp, 'Organization / Company Settings'),
+          _buildDrawerItem(1, Icons.apartment_sharp, 'Organization / Company'),
           _buildDrawerItem(2, Icons.notification_important, 'Notifications'),
           _buildDrawerItem(3, Icons.privacy_tip_rounded, 'Privacy & Data'),
           _buildDrawerItem(4, Icons.location_on, 'Localization & Language'),
           _buildDrawerItem(5, Icons.security_rounded, 'Regulatory & Compliance'),
           _buildDrawerItem(6, Icons.settings, 'Support & Feedback'),
+          _buildDrawerItem(7, Icons.settings, 'Test'),
         ],
       ),
     );
