@@ -4,9 +4,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:generalized_dpp/pages/LoggedIn/SettingsSections/supportDetailsPage.dart';
 import 'package:generalized_dpp/pages/LoggedOut/langing_page.dart';
-import 'package:local_auth/error_codes.dart';
 
 class AccountDetailsSection extends StatefulWidget {
   const AccountDetailsSection({super.key});
@@ -24,13 +22,6 @@ class _AccountDetailsSectionState extends State<AccountDetailsSection> {
   final TextEditingController _controllerLocation = TextEditingController();
   final TextEditingController _controllerCountry = TextEditingController();
 
-  // String textName = '';
-  // String textSurname = '';
-  // String textUsername = '';
-  // String textEmail = '';
-  // String textPhoneNumber = '';
-  // String textLocation = '';
-
   bool _isloading = true;
   bool _isSaving = false;
   String? _errorMessage;
@@ -39,30 +30,6 @@ class _AccountDetailsSectionState extends State<AccountDetailsSection> {
   void initState(){
     super.initState();
     _fetchUserData();
-
-    // _controllerName.addListener(() {
-    //   final String text = _controllerName.text;
-    // });
-
-    // _controllerSurname.addListener(() {
-    //   final String text = _controllerSurname.text;
-    // });
-
-    // _controllerUsername.addListener(() {
-    //   final String text = _controllerUsername.text;
-    // });
-
-    // _controllerEmail.addListener(() {
-    //   final String text = _controllerEmail.text;
-    // });
-
-    // _controllerPhoneNumber.addListener(() {
-    //   final String text = _controllerPhoneNumber.text;
-    // });
-
-    // _controllerLocation.addListener(() {
-    //   final String text = _controllerLocation.text;
-    // });
   }
 
   Future<void> _fetchUserData() async {
@@ -112,15 +79,15 @@ class _AccountDetailsSectionState extends State<AccountDetailsSection> {
         .collection('users')
         .doc(user.uid)
         .set({
-        'firstName': _controllerName.text,
-        'lastName': _controllerSurname.text,
-        'userName': _controllerUsername.text,
-        'email': _controllerEmail.text,
-        'phone': _controllerPhoneNumber.text,
-        'locationName': _controllerLocation.text,
-        'country': _controllerCountry.text,
-        'lastUpdated': FieldValue.serverTimestamp(),
-      }, SetOptions(merge: true));  //Is this going to add them at the bottom or replace?
+          'firstName': _controllerName.text,
+          'lastName': _controllerSurname.text,
+          'userName': _controllerUsername.text,
+          'email': _controllerEmail.text,
+          'phone': _controllerPhoneNumber.text,
+          'locationName': _controllerLocation.text,
+          'country': _controllerCountry.text,
+          'lastUpdated': FieldValue.serverTimestamp(),
+        }, SetOptions(merge: true));  //Is this going to add them at the bottom or replace?
 
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(content: Text('Profile update succesfully')),
@@ -173,12 +140,12 @@ class _AccountDetailsSectionState extends State<AccountDetailsSection> {
     );
   }
 
-  Widget _myTextField(String labeltext, TextEditingController controller) {
+  Widget _myTextField(TextEditingController controller) {
     return TextField(
       controller : controller,
       decoration: InputDecoration(
         border: const OutlineInputBorder(),
-        labelText: labeltext,
+        
       ),
     );
   }
@@ -282,43 +249,36 @@ class _AccountDetailsSectionState extends State<AccountDetailsSection> {
 
                     _buildSettingItem('Name'),
                     _myTextField(
-                      'Name', 
                       _controllerName),
 
                     const SizedBox(height: 10),
                     _buildSettingItem('Surname'),
                     _myTextField(
-                      'Surname',
                       _controllerSurname),
 
                     const SizedBox(height: 10),
                     _buildSettingItem('Username'),
                     _myTextField(
-                      'Username',
                       _controllerUsername),
 
                     const SizedBox(height: 10),
                     _buildSettingItem('Email'),
                     _myTextField(
-                      'Email',
                       _controllerEmail),
 
                     const SizedBox(height: 10),
                     _buildSettingItem('Phone Number'),
                     _myTextField(
-                      'Phone Number',
                       _controllerPhoneNumber),
 
                     const SizedBox(height: 10),
                     _buildSettingItem('Location'),
                     _myTextField(
-                      'Location',
                       _controllerLocation),
 
                     const SizedBox(height: 10),
                     _buildSettingItem('Country'),
                     _myTextField(
-                      'Country',
                       _controllerCountry),
                   ],
                 ),
